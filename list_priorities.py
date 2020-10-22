@@ -17,7 +17,7 @@ def get_priorities():
     base_path = os.path.dirname(__file__)
     for root, dirs, files in os.walk(base_path):
         # ignore folder starting with a dot
-        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d != 'common']
         dirs.sort()
 
         # ignore folder starting with a dot

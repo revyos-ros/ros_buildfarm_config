@@ -65,6 +65,8 @@ distributions:
       benchmark: rolling/ci-benchmark.yaml
       clang-tidy: rolling/ci-clang-tidy.yaml
       drake-ros-underlay: rolling/ci-drake-ros-underlay.yaml
+      ikos-underlay: rolling/ci-ikos-underlay.yaml
+      ikos: rolling/ci-ikos.yaml
       nightly-connext: rolling/ci-nightly-connext.yaml
       nightly-cross-vendor-connext-cyclonedds: rolling/ci-nightly-cross-vendor-connext-cyclonedds.yaml
       nightly-cross-vendor-connext-fastrtps: rolling/ci-nightly-cross-vendor-connext-fastrtps.yaml

@@ -80,6 +80,7 @@ distributions:
       nightly-release: rolling/ci-nightly-release.yaml
       overlay: rolling/ci-overlay.yaml
       spaceros: rolling/ci-spaceros.yaml
+      spaceros-moveit2: rolling/ci-spaceros-moveit2.yaml
     doc_builds:
       default: rolling/doc-build.yaml
     notification_emails:

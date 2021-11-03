@@ -32,7 +32,7 @@ install_packages:
 - python3-pygments
 - zlib1g-dev
 repos_files:
-- https://github.com/nuclearsandwich/ros2/raw/spaceros/ikos.repos
+- https://github.com/ros2/ros2/raw/spaceros/ikos.repos
 repositories:
   keys:
   - |

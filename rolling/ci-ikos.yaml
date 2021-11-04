@@ -15,7 +15,7 @@ jenkins_job_priority: 50
 jenkins_job_schedule: H H * * 0
 jenkins_job_timeout: 300
 jenkins_job_weight: 4
-package_selection_args: ''
+package_selection_args: '--packages-ignore cobra_vendor ament_cobra ament_cmake_cobra'
 install_packages:
 - clang-9
 - cmake

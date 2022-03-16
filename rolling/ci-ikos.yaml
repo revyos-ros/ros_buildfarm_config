@@ -36,7 +36,7 @@ install_packages:
 - python3-pygments
 - zlib1g-dev
 repos_files:
-- https://github.com/ros2/ros2/raw/spaceros/ros2.repos
+- https://github.com/space-ros/space-ros/raw/main/ros2.repos
 repositories:
   keys:
   - |

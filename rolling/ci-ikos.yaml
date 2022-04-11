@@ -113,6 +113,7 @@ skip_rosdep_keys:
   - rmw_fastrtps_cpp
   - rmw_fastrtps_dynamic_cpp
   - rosidl_typesupport_fastrtps_c
+  - rosidl_typesupport_fastrtps_cpp
 targets:
   ubuntu:
     focal:

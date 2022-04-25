@@ -11,7 +11,7 @@ jenkins_job_priority: 50
 jenkins_job_schedule: H H * * 0
 jenkins_job_timeout: 300
 jenkins_job_weight: 4
-package_selection_args: '--packages-ignore ament_ikos'
+package_selection_args: '--packages-ignore ament_cmake_ikos ament_ikos'
 repos_files:
 - https://github.com/space-ros/space-ros/raw/main/ros2.repos
 repositories:

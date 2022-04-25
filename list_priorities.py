@@ -4,6 +4,21 @@ import os
 import yaml
 
 
+# Benchmark scripts use the include directive which is not required
+# for this script to run, so let's stub it out.
+class StubInclude():
+    def __init__(self, path):
+        self.path = path
+
+
+def include_constructor(loader, node, Loader=yaml.SafeLoader):
+    path = loader.construct_scalar(node)
+    return StubInclude(path)
+
+
+yaml.add_constructor(u'!include', include_constructor, Loader=yaml.SafeLoader)
+
+
 def main():
     priorities = get_priorities()
     for key in sorted(priorities.keys()):
@@ -16,8 +31,9 @@ def get_priorities():
     priorities = {}
     base_path = os.path.dirname(__file__)
     for root, dirs, files in os.walk(base_path):
-        # ignore folder starting with a dot
-        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        # ignore folder starting with a dot and the `common` directory
+        # which is used for !include tag sources.
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d != 'common']
         dirs.sort()
 
         # ignore folder starting with a dot
@@ -33,7 +49,7 @@ def get_priorities():
 
 def collect_priorities(path, relpath, priorities):
     with open(path, 'r') as h:
-        data = yaml.load(h)
+        data = yaml.load(h, Loader=yaml.SafeLoader)
     for key in sorted(data.keys()):
         if not key.endswith('_priority'):
             continue

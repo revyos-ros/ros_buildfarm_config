@@ -12,6 +12,8 @@ notifications:
   - scott+build.ros2.org@openrobotics.org
   - ros2-buildfarm-galactic@googlegroups.com
   maintainers: true
+package_whitelist:
+- null
 sync:
   package_count: 262
 repositories:

@@ -14,6 +14,8 @@ notifications:
   emails:
   - scott+build.ros2.org@openrobotics.org
   maintainers: false
+package_whitelist:
+- null
 package_blacklist:
 - acado_vendor  # Requires unreleased changes
 - ament_black  # black has no RPM packages for RHEL

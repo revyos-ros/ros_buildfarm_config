@@ -55,9 +55,9 @@ repositories:
   - http://repo.ros2.org/ubuntu/building
 target_repository: http://repo.ros2.org/ubuntu/building
 targets:
-  ubuntu:
-    jammy:
-      amd64:
+  debian:
+    bookworm:
+      riscv64:
 type: release-build
 upload_credential_id: jenkins-agent
 version: 2

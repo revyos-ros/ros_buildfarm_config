@@ -12,9 +12,8 @@ jenkins_source_job_priority: 75
 jenkins_source_job_timeout: 30
 notifications:
   emails:
-  - audrow+build.ros2.org@openrobotics.org
-  - ros2-buildfarm-humble@googlegroups.com
-  maintainers: true
+  - zhengjunjie@iscas.ac.cn
+  maintainers: false
 sync:
   package_count: 499
   packages: [desktop]
@@ -22,41 +21,52 @@ repositories:
   keys:
   - |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
-    Version: GnuPG v1
 
-    mQINBFzvJpYBEADY8l1YvO7iYW5gUESyzsTGnMvVUmlV3XarBaJz9bGRmgPXh7jc
-    VFrQhE0L/HV7LOfoLI9H2GWYyHBqN5ERBlcA8XxG3ZvX7t9nAZPQT2Xxe3GT3tro
-    u5oCR+SyHN9xPnUwDuqUSvJ2eqMYb9B/Hph3OmtjG30jSNq9kOF5bBTk1hOTGPH4
-    K/AY0jzT6OpHfXU6ytlFsI47ZKsnTUhipGsKucQ1CXlyirndZ3V3k70YaooZ55rG
-    aIoAWlx2H0J7sAHmqS29N9jV9mo135d+d+TdLBXI0PXtiHzE9IPaX+ctdSUrPnp+
-    TwR99lxglpIG6hLuvOMAaxiqFBB/Jf3XJ8OBakfS6nHrWH2WqQxRbiITl0irkQoz
-    pwNEF2Bv0+Jvs1UFEdVGz5a8xexQHst/RmKrtHLct3iOCvBNqoAQRbvWvBhPjO/p
-    V5cYeUljZ5wpHyFkaEViClaVWqa6PIsyLqmyjsruPCWlURLsQoQxABcL8bwxX7UT
-    hM6CtH6tGlYZ85RIzRifIm2oudzV5l+8oRgFr9yVcwyOFT6JCioqkwldW52P1pk/
-    /SnuexC6LYqqDuHUs5NnokzzpfS6QaWfTY5P5tz4KHJfsjDIktly3mKVfY0fSPVV
-    okdGpcUzvz2hq1fqjxB6MlB/1vtk0bImfcsoxBmF7H+4E9ZN1sX/tSb0KQARAQAB
-    tCZPcGVuIFJvYm90aWNzIDxpbmZvQG9zcmZvdW5kYXRpb24ub3JnPokCVAQTAQgA
-    PgIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgBYhBMHPbjHmut6IaLFytPQu1vur
-    F8ZUBQJgsdhRBQkLTMW7AAoJEPQu1vurF8ZUTMwP/3f7EkOPIFjUdRmpNJ2db4iB
-    RQu5b2SJRG+KIdbvQBzKUBMV6/RUhEDPjhXZI3zDevzBewvAMKkqs2Q1cWo9WV7Z
-    PyTkvSyey/Tjn+PozcdvzkvrEjDMftIk8E1WzLGq7vnPLZ1q/b6Vq4H373Z+EDWa
-    DaDwW72CbCBLWAVtqff80CwlI2x8fYHKr3VBUnwcXNHR4+nRABfAWnaU4k+oTshC
-    Qucsd8vitNfsSXrKuKyz91IRHRPnJjx8UvGU4tRGfrHkw1505EZvgP02vXeRyWBR
-    fKiL1vGy4tCSRDdZO3ms2J2m08VPv65HsHaWYMnO+rNJmMZj9d9JdL/9GRf5F6U0
-    quoIFL39BhUEvBynuqlrqistnyOhw8W/IQy/ymNzBMcMz6rcMjMwhkgm/LNXoSD1
-    1OrJu4ktQwRhwvGVarnB8ihwjsTxZFylaLmFSfaA+OAlOqCLS1OkIVMzjW+Ul6A6
-    qjiCEUOsnlf4CGlhzNMZOx3low6ixzEqKOcfECpeIj80a2fBDmWkcAAjlHu6VBhA
-    TUDG9e2xKLzV2Z/DLYsb3+n9QW7KO0yZKfiuUo6AYboAioQKn5jh3iRvjGh2Ujpo
-    22G+oae3PcCc7G+z12j6xIY709FQuA49dA2YpzMda0/OX4LP56STEveDRrO+CnV6
-    WE+F5FaIKwb72PL4rLi4
-    =i0tj
+    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
+    k5IDPJeW+X+dmQTA94DQowY=
+    =B3BK
     -----END PGP PUBLIC KEY BLOCK-----
   urls:
-  - http://repo.ros2.org/ubuntu/building
-target_repository: http://repo.ros2.org/ubuntu/building
+  - http://100.88.64.10/building
+target_repository: http://100.88.64.10/building
 targets:
   debian:
-    bookworm:
+    bullseye:
       riscv64:
 type: release-build
 upload_credential_id: jenkins-agent

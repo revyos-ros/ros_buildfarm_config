@@ -64,6 +64,7 @@ repositories:
   urls:
   - http://100.88.64.10/building
 target_repository: http://100.88.64.10/building
+target_queue: /var/repos/building/queue
 targets:
   debian:
     bullseye:

@@ -63,6 +63,7 @@ repositories:
   - http://100.88.64.10/testing
 repository_blacklist:
 - ros_workspace
+target_queue: /var/repos/building/queue
 targets:
   debian:
     bullseye:

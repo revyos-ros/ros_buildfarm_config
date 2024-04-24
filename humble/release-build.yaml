@@ -22,6 +22,7 @@ package_blacklist:
 - kortex_bringup  # depends on kortex_api and kortex_driver
 - kortex_driver  # depends on kortex_api and uses libKortexApiCpp.a from Kinova
 - rmw_connextdds
+- nao_meshes
 repositories:
   keys:
   - |

@@ -23,6 +23,7 @@ package_blacklist:
 - kortex_driver  # depends on kortex_api and uses libKortexApiCpp.a from Kinova
 - rmw_connextdds
 - nao_meshes
+- unitree_ros
 repositories:
   keys:
   - |

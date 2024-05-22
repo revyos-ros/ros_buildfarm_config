@@ -74,6 +74,6 @@ targets:
 test_commits:
   default: true
 test_pull_requests:
-  default: false
+  default: true
 type: source-build
 version: 2

@@ -24,6 +24,7 @@ package_blacklist:
 - rmw_connextdds
 - nao_meshes
 - unitree_ros
+- avt_vimba_camera
 repositories:
   keys:
   - |

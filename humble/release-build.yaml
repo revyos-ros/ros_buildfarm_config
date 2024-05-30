@@ -16,7 +16,7 @@ notifications:
   maintainers: false
 sync:
   package_count: 499
-  packages: [desktop]
+  packages: [desktop,desktop_full]
 package_blacklist:
 - kortex_api  # Kinova does not provide riscv64.
 - kortex_bringup  # depends on kortex_api and kortex_driver

@@ -25,6 +25,7 @@ package_blacklist:
 - nao_meshes
 - unitree_ros
 - avt_vimba_camera
+- metavision_driver # require metavision_sdk
 repositories:
   keys:
   - |

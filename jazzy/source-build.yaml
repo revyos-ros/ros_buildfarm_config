@@ -1,28 +1,22 @@
 %YAML 1.1
-# ROS buildfarm index file
+# ROS buildfarm source-build file
 ---
-distributions:
-  humble:
-    notification_emails:
-    - zhengjunjie@iscas.ac.cn
-    release_builds:
-      default: humble/release-build.yaml
-    source_builds:
-      default: humble/source-build.yaml
-  jazzy:
-    notification_emails:
-    - zhengjunjie@iscas.ac.cn
-    release_builds:
-      default: jazzy/release-build.yaml
-    source_builds:
-      default: jazzy/source-build.yaml
-jenkins_url: http://100.88.64.10:10000/
-notification_emails:
-- zhengjunjie@iscas.ac.cn
-prerequisites:
-  debian_repositories:
-  - http://100.88.64.10/building
-  debian_repository_keys:
+build_environment_variables:
+  CONNEXTDDS_DIR: /opt/rti.com/rti_connext_dds-6.0.1
+  ROS_PYTHON_VERSION: 3
+  RTI_NC_LICENSE_ACCEPTED: 'yes'
+build_tool: colcon
+jenkins_commit_job_priority: 55
+jenkins_job_timeout: 120
+jenkins_pull_request_job_priority: 45
+notifications:
+  committers: false
+  compiler_warnings: true
+  emails:
+  - zhengjunjie@iscas.ac.cn
+  maintainers: false
+repositories:
+  keys:
   - |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -65,11 +59,21 @@ prerequisites:
     k5IDPJeW+X+dmQTA94DQowY=
     =B3BK
     -----END PGP PUBLIC KEY BLOCK-----
-rosdistro_index_url: https://raw.githubusercontent.com/revyos-ros/rosdistro/master/index-v4.yaml
-status_page_repositories:
-  default:
-  - http://100.88.64.10/building
+  urls:
   - http://100.88.64.10/testing
-  - http://100.88.64.10/main
-type: buildfarm
-version: 1
+repository_blacklist:
+- ros_workspace
+target_queue: /var/repos/building/queue
+targets:
+  _config:
+    custom_rosdep_urls:
+      - https://raw.githubusercontent.com/revyos-ros/rosdistro/master/rosdep/sources.list.d/20-default.list
+  debian:
+    bookworm:
+      riscv64:
+test_commits:
+  default: false
+test_pull_requests:
+  default: false
+type: source-build
+version: 2

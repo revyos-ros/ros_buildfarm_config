@@ -1,28 +1,33 @@
 %YAML 1.1
-# ROS buildfarm index file
+# ROS buildfarm release-build file
 ---
-distributions:
-  humble:
-    notification_emails:
-    - zhengjunjie@iscas.ac.cn
-    release_builds:
-      default: humble/release-build.yaml
-    source_builds:
-      default: humble/source-build.yaml
-  jazzy:
-    notification_emails:
-    - zhengjunjie@iscas.ac.cn
-    release_builds:
-      default: jazzy/release-build.yaml
-    source_builds:
-      default: jazzy/source-build.yaml
-jenkins_url: http://100.88.64.10:10000/
-notification_emails:
-- zhengjunjie@iscas.ac.cn
-prerequisites:
-  debian_repositories:
-  - http://100.88.64.10/building
-  debian_repository_keys:
+abi_incompatibility_assumed: true
+
+build_environment_variables:
+  RTI_NC_LICENSE_ACCEPTED: 'yes'
+  PYTEST_ADDOPTS: '-pno:cacheprovider'
+jenkins_binary_job_priority: 85
+jenkins_binary_job_timeout: 600
+jenkins_source_job_priority: 75
+jenkins_source_job_timeout: 30
+notifications:
+  emails:
+  - zhengjunjie@iscas.ac.cn
+  maintainers: false
+sync:
+  package_count: 499
+  packages: [desktop]
+package_blacklist:
+- kortex_api  # Kinova does not provide riscv64.
+- kortex_bringup  # depends on kortex_api and kortex_driver
+- kortex_driver  # depends on kortex_api and uses libKortexApiCpp.a from Kinova
+- rmw_connextdds
+- nao_meshes
+- unitree_ros
+- avt_vimba_camera
+- metavision_driver # require metavision_sdk
+repositories:
+  keys:
   - |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -65,11 +70,14 @@ prerequisites:
     k5IDPJeW+X+dmQTA94DQowY=
     =B3BK
     -----END PGP PUBLIC KEY BLOCK-----
-rosdistro_index_url: https://raw.githubusercontent.com/revyos-ros/rosdistro/master/index-v4.yaml
-status_page_repositories:
-  default:
+  urls:
   - http://100.88.64.10/building
-  - http://100.88.64.10/testing
-  - http://100.88.64.10/main
-type: buildfarm
-version: 1
+target_repository: http://100.88.64.10/building
+target_queue: /var/repos/building/queue
+targets:
+  debian:
+    bookworm:
+      riscv64:
+type: release-build
+upload_credential_id: jenkins-agent
+version: 2

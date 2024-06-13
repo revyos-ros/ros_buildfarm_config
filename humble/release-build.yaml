@@ -71,8 +71,8 @@ repositories:
     =B3BK
     -----END PGP PUBLIC KEY BLOCK-----
   urls:
-  - http://100.124.125.25/building
-target_repository: http://100.124.125.25/building
+  - http://100.88.64.10/building
+target_repository: http://100.88.64.10/building
 target_queue: /var/repos/building/queue
 targets:
   debian:

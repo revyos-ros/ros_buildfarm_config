@@ -16,12 +16,12 @@ distributions:
       default: jazzy/release-build.yaml
     source_builds:
       default: jazzy/source-build.yaml
-jenkins_url: http://100.88.64.10:10000/
+jenkins_url: http://100.124.125.25:10000/
 notification_emails:
 - zhengjunjie@iscas.ac.cn
 prerequisites:
   debian_repositories:
-  - http://100.88.64.10/building
+  - http://100.124.125.25/building
   debian_repository_keys:
   - |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -68,8 +68,8 @@ prerequisites:
 rosdistro_index_url: https://raw.githubusercontent.com/revyos-ros/rosdistro/master/index-v4.yaml
 status_page_repositories:
   default:
-  - http://100.88.64.10/building
-  - http://100.88.64.10/testing
-  - http://100.88.64.10/main
+  - http://100.124.125.25/building
+  - http://100.124.125.25/testing
+  - http://100.124.125.25/main
 type: buildfarm
 version: 1

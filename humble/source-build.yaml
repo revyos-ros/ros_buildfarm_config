@@ -60,7 +60,7 @@ repositories:
     =B3BK
     -----END PGP PUBLIC KEY BLOCK-----
   urls:
-  - http://100.88.64.10/testing
+  - http://100.124.125.25/testing
 repository_blacklist:
 - ros_workspace
 target_queue: /var/repos/building/queue

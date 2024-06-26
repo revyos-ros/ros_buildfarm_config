@@ -29,6 +29,7 @@ package_blacklist:
 - unitree_ros
 - avt_vimba_camera
 - metavision_driver # require metavision_sdk
+- velodyne_simulator # require gazebo_ros_pkgs, see https://github.com/ros-simulation/gazebo_ros_pkgs/issues/1529
 repositories:
   keys:
   - |

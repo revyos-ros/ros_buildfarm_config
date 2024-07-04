@@ -1,31 +1,21 @@
 %YAML 1.1
-# ROS buildfarm index file
+# ROS buildfarm ci-build file
 ---
-distributions:
-  humble:
-    notification_emails:
-    - zhengjunjie@iscas.ac.cn
-    release_builds:
-      default: humble/release-build.yaml
-    source_builds:
-      default: humble/source-build.yaml
-  jazzy:
-    notification_emails:
-    - zhengjunjie@iscas.ac.cn
-    ci_build:
-      nightly-extra-rmw-release: jazzy/ci-nightly-extra-rmw-release.yaml
-      nightly-fastrtps-dynamic: jazzy/ci-nightly-fastrtps-dynamic.yaml
-    release_builds:
-      default: jazzy/release-build.yaml
-    source_builds:
-      default: jazzy/source-build.yaml
-jenkins_url: http://100.88.64.10:10000/
-notification_emails:
-- zhengjunjie@iscas.ac.cn
-prerequisites:
-  debian_repositories:
-  - http://100.88.64.10/building
-  debian_repository_keys:
+build_environment_variables:
+  ROS_PYTHON_VERSION: '3'
+build_tool: colcon
+build_tool_args: '--cmake-args --no-warn-unused-cli'
+build_tool_test_args: '--retest-until-pass 2 --ctest-args -LE xfail --pytest-args -m "not xfail"'
+jenkins_job_label: ci-agent
+jenkins_job_priority: 50
+jenkins_job_schedule: 15 23 * * *
+jenkins_job_timeout: 300
+jenkins_job_weight: 4
+package_selection_args: '--packages-ignore rmw_fastrtps_cpp --packages-ignore-regex .*connext.* .*cyclonedds.*'
+repos_files:
+- https://github.com/ros2/ros2/raw/jazzy/ros2.repos
+repositories:
+  keys:
   - |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -68,11 +58,14 @@ prerequisites:
     k5IDPJeW+X+dmQTA94DQowY=
     =B3BK
     -----END PGP PUBLIC KEY BLOCK-----
-rosdistro_index_url: https://raw.githubusercontent.com/revyos-ros/rosdistro/master/index-v4.yaml
-status_page_repositories:
-  default:
-  - http://100.88.64.10/building
+  urls:
   - http://100.88.64.10/testing
-  - http://100.88.64.10/main
-type: buildfarm
+targets:
+  _config:
+    custom_rosdep_urls:
+      - https://raw.githubusercontent.com/revyos-ros/rosdistro/master/rosdep/sources.list.d/20-default.list
+  debian:
+    bookworm:
+      riscv64:
+type: ci-build
 version: 1

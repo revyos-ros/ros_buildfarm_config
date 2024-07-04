@@ -12,7 +12,7 @@ distributions:
   jazzy:
     notification_emails:
     - zhengjunjie@iscas.ac.cn
-    ci_build:
+    ci_builds:
       nightly-extra-rmw-release: jazzy/ci-nightly-extra-rmw-release.yaml
       nightly-fastrtps-dynamic: jazzy/ci-nightly-fastrtps-dynamic.yaml
     release_builds:

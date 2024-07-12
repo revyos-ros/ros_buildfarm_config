@@ -15,6 +15,7 @@ distributions:
     ci_builds:
       nightly-extra-rmw-release: jazzy/ci-nightly-extra-rmw-release.yaml
       nightly-fastrtps-dynamic: jazzy/ci-nightly-fastrtps-dynamic.yaml
+      nightly-performance: jazzy/ci-nightly-performance.yaml
     release_builds:
       default: jazzy/release-build.yaml
     source_builds:

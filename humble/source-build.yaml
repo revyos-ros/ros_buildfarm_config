@@ -67,7 +67,7 @@ target_queue: /var/repos/building/queue
 targets:
   _config:
     custom_rosdep_urls:
-      - https://raw.githubusercontent.com/revyos-ros/rosdistro/master/rosdep/sources.list.d/20-default.list
+      - https://raw.githubusercontent.com/revyos-ros/rosdistro/master/rosdep/sources.list.d/19-default.list
   debian:
     bullseye:
       riscv64:

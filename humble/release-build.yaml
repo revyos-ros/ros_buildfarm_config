@@ -78,6 +78,8 @@ targets:
   debian:
     bullseye:
       riscv64:
+    bookworm:
+      riscv64:
 type: release-build
 upload_credential_id: jenkins-agent
 version: 2

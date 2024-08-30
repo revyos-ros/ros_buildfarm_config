@@ -14,8 +14,6 @@ notifications:
   emails:
   - zhengjunjie@iscas.ac.cn
   maintainers: false
-package_dependency_behavior:
-  run_package_tests: false
 sync:
   package_count: 499
   packages: [desktop,desktop_full]

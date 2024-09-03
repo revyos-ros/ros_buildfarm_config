@@ -24,6 +24,7 @@ package_blacklist:
 - kortex_api  # Kinova does not provide riscv64.
 - kortex_bringup  # depends on kortex_api and kortex_driver
 - kortex_driver  # depends on kortex_api and uses libKortexApiCpp.a from Kinova
+- rc_genicam_api # no provide riscv64 elf
 - rmw_connextdds
 - nao_meshes
 - unitree_ros

@@ -69,8 +69,6 @@ targets:
     custom_rosdep_urls:
       - https://raw.githubusercontent.com/revyos-ros/rosdistro/master/rosdep/sources.list.d/19-default.list
   debian:
-    bullseye:
-      riscv64:
     bookworm:
       riscv64:
 test_commits:
